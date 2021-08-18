@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="facture.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+
+    <div class="bord ui container ">
+        <p>
+            <h1 style="padding-left: 75%; padding-top:10%;"><i>Facture</i></h1>
+        </p>
+
+        <div style="margin-left:6%" class="ui ordered steps">
+            <div class="active completed step">
+                <div class="content">
+                    <div class="title">Client</div>
+                    <div class="description">remplir informations client</div>
+                </div>
+            </div>
+            <div class="completed step">
+                <div class="content">
+                    <div class="title">document</div>
+                    <div class="description">ajouter des informations necessaire au Document</div>
+                </div>
+            </div>
+            <div class=" completed step">
+
+                <div class="content">
+                    <div class="title">Produit</div>
+                    <div class="description">Ajouter vos produits et d'autres informations</div>
+                </div>
+            </div>
+        </div>
+        <h4 class="ui horizontal divider header" style="margin-top: 5%;">
+            <i class="bar bar chart icon"></i>Description
+        </h4>
+        <div class="secbox">
+
+            <div class="little-box" style="padding: 2.5%;">
+
+                <p>
+                    <h2>Ajouter un Client :</h2>
+                </p>
+                <button id="client" style="margin-left: 28%;" class="ui inverted green button">Ajouter</button>
+
+            </div>
+
+            <div class="little-box">
+                <p>
+                    <h2>detail du Document :</h2>
+                </p>
+                <button id="docs" style="margin-left: 28%;" class="ui inverted green button">Ajouter</button>
+
+
+            </div>
+
+        </div>
+        <div class="infoDC">
+            <div class="client" style="margin-left: 2%;margin-right: 9%;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                <table class="ui green table">
+                    <thead>
+                        <tr>
+                            <th>Entreprise</th>
+                            <th>Matricule fiscal</th>
+                            <th>Responsable</th>
+                            <th>adresse-email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="1">----</td>
+                            <td id="2">----</td>
+                            <td id="3">----</td>
+                            <td id="4">----</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="societe" style="margin-right: 10%;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                <table class="ui green table">
+                    <thead>
+                        <tr>
+                            <th>Date du Document</th>
+                            <th>Projet</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="5">----</td>
+                            <td id="6">----</td>
+                            <td id="7" style="display: flex;flex-wrap:wrap;">----</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <h4 class="ui horizontal divider header">
+            <i class=" payment icon"></i> Specifications
+        </h4>
+        <!--<div class="Vline"></div>
+        -->
+
+        <div class="bar-prod">
+            <button id="prod" class="ui inverted green button">Ajouter Produit</button>
+            <button id="text" class="ui inverted green button">Ajouter Texte</button>
+            <button id="sep" class="ui inverted green button">Ajouter separateur</button>
+        </div>
+
+
+
+
+
+
+
+        <div style="padding: 0% 5%">
+            <table class="ui green  table">
+                <thead>
+                    <tr>
+
+                        <th>Produit</th>
+                        <th>Quantité</th>
+                        <th>Prix HT</th>
+                        <th>Unité</th>
+                        <th>TVA</th>
+                        <th>Total HT</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    <!--
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    -->
+                </tbody>
+            </table>
+        </div>
+        <div class="sep">
+
+        </div>
+
+
+
+        <div class="last">
+
+
+
+
+
+            <table class="ui collapsing green table">
+                <thead>
+                    <tr>
+                        <th>TVA</th>
+                        <th>Base</th>
+                        <th>Montant</th>
+                    </tr>
+                </thead>
+                <tbody class="tgauche">
+                    <!--
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    -->
+
+                </tbody>
+
+            </table>
+
+
+
+            <table class="ui collapsing table">
+
+                <tbody>
+                    <tr>
+                        <td style="padding-right:150px">Total HT</td>
+                        <td id="D1">0.000 TND </td>
+
+                    </tr>
+                    <tr>
+                        <td>TOTAL TVA</td>
+                        <td id="D2">0.000 TND </td>
+                    </tr>
+                    <tr>
+                        <td>TOTAL TTC</td>
+                        <td id="D3">0.000 TND</td>
+                    </tr>
+                    <tr>
+                        <td>Timbre fiscal</td>
+                        <td>0.600 TND </td>
+                    </tr>
+                    <tr>
+                        <td><b>NET A PAYER</b></td>
+                        <td id="D5"><b style="color: green;">0.600 TND</b> </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+
+
+
+
+        <button style="margin-top:5%; margin-left:90%" class="ui green  button">Imprimer</button>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--MODAL Client-->
+    <div class="ui modal  cl">
+        <i class="close icon"></i>
+        <div class="header">
+            Ajouter un Client
+        </div>
+
+        <div class="image content">
+
+            <div style="padding: 2%;" class="description">
+                <div style="margin: 2%;display:flex;justify-content:space-around;align-items:baseline">
+                    <label>Entreprise</label>
+                    <div class="ui input focus">
+                        <input id="ent" type="text" placeholder="Entreprise">
+                    </div>
+                    <label>Matricule fiscal</label>
+                    <div class="ui input focus">
+                        <input id="mat" type="text" placeholder="Matricule">
+                    </div>
+                </div>
+                <br>
+                <div style="margin: 2%;display:flex;justify-content:space-around;align-items:baseline">
+                    <label>Responsable</label>
+                    <div class="ui input focus">
+                        <input id="res" type="text" placeholder="responsable">
+                    </div>
+                    <label>adresse -Email</label>
+                    <div class="ui input focus">
+                        <input id="email" type="text" placeholder="e-mail">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui black deny button">
+                annuler
+            </div>
+            <div id="subCl" class="ui positive right labeled icon button">
+                Valider
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
+    <!---->
+
+
+    <!--MODAL Document-->
+    <div class="ui modal docs ">
+        <i class="close icon"></i>
+        <div class="header">
+            Ajouter un des informations du Document
+        </div>
+        <div class="image content">
+
+            <div style="padding: 2%;" class="description">
+                <div style="margin: 2%;display:flex;justify-content:space-around;align-items:baseline">
+                    <label>Date du document</label>
+                    <div class="ui input focus">
+                        <input id="date" type="text" placeholder="date">
+                    </div>
+                    <label>Projet</label>
+                    <div class="ui input focus">
+                        <input id="Projet" type="text" placeholder="projet">
+                    </div>
+                </div>
+                <br>
+                <div style="margin-left:16%;padding:5%">
+                    <label style="margin-right: 5%;">note</label>
+                    <div class=" ui input focus ">
+                        <input id="note" type="text " placeholder="note ">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="actions ">
+            <div class="ui black deny button ">
+                annuler
+            </div>
+            <div id="subdocs" class="ui positive right labeled icon button ">
+                Valider
+                <i class="checkmark icon "></i>
+            </div>
+        </div>
+    </div>
+    <!---->
+
+
+    <!--MODAL Ajouter un Produit-->
+    <div class="ui modal pro ">
+        <i class="close icon"></i>
+        <div class="header">
+            Ajouter un Produit
+        </div>
+        <div class="image content">
+
+            <div style="padding: 2%;" class="description">
+                <div style="margin: 2%;display:flex;justify-content:space-around;align-items:baseline">
+                    <label>Produit</label>
+                    <div class="ui input focus">
+                        <input id="nomP" type="text" placeholder="Produit">
+                    </div>
+                    <label>Quantite</label>
+                    <div class="ui input focus">
+                        <input id="qt" type="text" placeholder="Quantite">
+                    </div>
+                </div>
+                <br>
+                <div style="margin: 1%;display:flex;justify-content:space-around;align-items:baseline">
+                    <label>Prix HT</label>
+                    <div class="ui input focus">
+                        <input id="pHT" type="text" placeholder="Prix HT">
+                    </div>
+                    <label>Unité</label>
+                    <div class="ui input focus">
+                        <input id="unite" type="text" placeholder="Unité">
+                    </div>
+                </div>
+
+                <div style="margin:5% 7%;">
+                    <label style="margin-right: 15%;">TVA</label>
+                    <div class="ui input focus">
+                        <input id="TVA" type="text" placeholder="TVA">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui black deny button">
+                annuler
+            </div>
+            <div id="subPro" class="ui positive right labeled icon button">
+                Valider
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
+    <!---->
+
+
+
+
+
+    <script src="facture.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js "></script>
+
+
+</body>
+
+</html>
